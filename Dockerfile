@@ -29,4 +29,4 @@ RUN pip install -r requirements.txt
 
 COPY . .
 
-CMD ["python", "discord_bot.py"]
+CMD ["python", "discord_command_bot.py"]
