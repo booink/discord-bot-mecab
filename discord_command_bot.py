@@ -1,6 +1,7 @@
 import os
 import MeCab
 import discord
+import traceback
 from discord.ext import commands
 
 TOKEN = os.environ["TOKEN"]
@@ -30,4 +31,14 @@ async def mecab(ctx, *args):
         # メッセージが送られてきたチャンネルへメッセージを送ります
         await ctx.send(m)
 
-bot.run(TOKEN)
+def main():
+    try:
+        bot.run(TOKEN)
+    except Exception as e:
+        print(str(e))
+        traceback.print_exc()
+        exit(1)
+
+if __name__ == '__main__':
+    main()
+
